@@ -21,5 +21,5 @@ DB_DATABASE=counter
 ### Running the app
 Execute the following command in the top level directory
 ```
-gunicorn --bind 0.0.0.0:5000 --chdir countapp countapp.wsgi:app --reload --timeout=900
+gunicorn --bind 0.0.0.0:6000 --chdir countapp countapp.wsgi:app --reload --timeout=900
 ```
