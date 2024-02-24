@@ -1,0 +1,22 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: web
+    ports:
+      - "6060:6000"
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=changeme
+      - MYSQL_DATABASE=counter
+      - MYSQL_PORT=3306
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_DATABASE=counter
+
