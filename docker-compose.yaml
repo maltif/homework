@@ -1,7 +1,11 @@
 version: '3'
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - APP_ENV=production
     container_name: web
     ports:
       - "6060:6000"
